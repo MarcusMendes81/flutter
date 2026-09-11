@@ -1,0 +1,7 @@
+http
+get_it
+flutter_dotenv
+protobuf
+go_router
+signals
+fixnum protobuf
