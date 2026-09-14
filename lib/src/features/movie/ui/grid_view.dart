@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:rental/src/shared/proto/rental.pb.dart';
 
@@ -34,7 +35,24 @@ class GridBuilderState extends State<GridBuilder> {
           child: GridTile(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [Text('Name: ${movie.director}')],
+              children: [
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(2.0),
+                    child: Image.memory(Uint8List.fromList(movie.cover)),
+                  ),
+                ),
+                Center(
+                  child: Text(
+                    movie.value.toStringAsFixed(2),
+                    style: TextStyle(
+                      color: const Color.fromARGB(255, 0, 0, 0),
+                      fontSize: 12.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         );

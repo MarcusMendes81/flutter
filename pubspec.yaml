@@ -31,3 +31,4 @@ flutter:
   assets:
     - .env
     - assets/user.png
+    - assets/image.png

@@ -14,49 +14,51 @@ class LoginUi extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: Center(
-          child: Container(
-            padding: EdgeInsetsGeometry.all(5.0),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8.0),
-              color: const Color.fromARGB(255, 64, 8, 78),
-            ),
-            width: 300,
-            height: 300,
-            child: Column(
-              children: [
-                Text(
-                  'Entrar',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                inputs(context),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(30.0),
-                      child: ElevatedButton(
-                        onPressed: () async {
-                          var username = _controllerUsername.text;
-                          var password = _controllerPassword.text;
-                          final isSuccess = await _controller.login(
-                            username,
-                            password,
-                          );
-                          // ignore: unrelated_type_equality_checks
-                          if (isSuccess) {
-                            router.go('/home');
-                          }
-                        },
-                        child: const Text('Confirmar'),
-                      ),
+          child: Opacity(
+            opacity: 0.5,
+            child: Container(
+              padding: EdgeInsetsGeometry.all(5.0),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8.0),
+                color: const Color.fromARGB(255, 64, 8, 78),
+              ),
+              width: 300,
+              height: 300,
+              child: Column(
+                children: [
+                  Text(
+                    'Entrar',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
                     ),
-                  ],
-                ),
-              ],
+                  ),
+                  inputs(context),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(30.0),
+                        child: ElevatedButton(
+                          onPressed: () async {
+                            var username = _controllerUsername.text;
+                            var password = _controllerPassword.text;
+                            final isSuccess = await _controller.login(
+                              username,
+                              password,
+                            );
+                            if (isSuccess) {
+                              router.go('/home');
+                            }
+                          },
+                          child: const Text('Confirmar'),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),

@@ -18,22 +18,16 @@ class _HomeUiState extends State<HomeUi> {
         appBar: AppBar(
           backgroundColor: Colors.deepPurple,
           leading: const Padding(
-            padding: EdgeInsetsGeometry.only(
-              left: 18.0,
-              right: 0.0,
-              top: 8.0,
-              bottom: 8.0,
-            ),
+            padding: EdgeInsetsGeometry.all(8.0),
             child: Row(
               children: [
                 CircleAvatar(
                   backgroundColor: Colors.amber,
                   child: Padding(
-                    padding: EdgeInsets.all(10.0),
+                    padding: EdgeInsets.all(8.0),
                     child: Image(image: AssetImage('assets/user.png')),
                   ),
                 ),
-                Text('Maria'),
               ],
             ),
           ),
